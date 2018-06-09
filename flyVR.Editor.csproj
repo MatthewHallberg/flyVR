@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D1D9001-4E58-FADB-BC2A-7C0B6C053D48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectGenerator>VSTU</UnityProjectGenerator>
+    <UnityProjectType>Editor:5</UnityProjectType>
+    <UnityBuildTarget>iOS:9</UnityBuildTarget>
+    <UnityVersion>5.6.4p1</UnityVersion>
+    <RootNamespace></RootNamespace>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_4;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;ENABLE_RUNTIME_GI;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_NETWORK;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_IOS_NATIVE_CRASH_REPORTING;PLAYERCONNECTION_LISTENS_FIXED_PORT;DEBUGGER_LISTENS_FIXED_PORT;PLATFORM_SUPPORTS_ADS_ID;SUPPORT_ENVIRONMENT_VARIABLES;PLATFORM_SUPPORTS_PROFILER;PLATFORM_HAS_NO_SUPPORT_FOR_BUCKET_ALLOCATOR;STRICTCPP_NEW_DELETE_SIGNATURES;HAS_NEON_SKINNIG;UNITY_GFX_USE_PLATFORM_VSYNC;UNITY_INPUT_SIMULATE_EVENTS;PLATFORM_ALWAYS_USES_STDOUT_FOR_LOG;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;UNITY_IOS;UNITY_IPHONE;UNITY_IPHONE_API;SUPPORT_MULTIPLE_DISPLAYS;ENABLE_IL2CPP;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_DUCK_TYPING;ENABLE_IOS_ON_DEMAND_RESOURCES;ENABLE_IOS_APP_SLICING;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_4;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;ENABLE_RUNTIME_GI;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_NETWORK;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_IOS_NATIVE_CRASH_REPORTING;PLAYERCONNECTION_LISTENS_FIXED_PORT;DEBUGGER_LISTENS_FIXED_PORT;PLATFORM_SUPPORTS_ADS_ID;SUPPORT_ENVIRONMENT_VARIABLES;PLATFORM_SUPPORTS_PROFILER;PLATFORM_HAS_NO_SUPPORT_FOR_BUCKET_ALLOCATOR;STRICTCPP_NEW_DELETE_SIGNATURES;HAS_NEON_SKINNIG;UNITY_GFX_USE_PLATFORM_VSYNC;UNITY_INPUT_SIMULATE_EVENTS;PLATFORM_ALWAYS_USES_STDOUT_FOR_LOG;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;UNITY_IOS;UNITY_IPHONE;UNITY_IPHONE_API;SUPPORT_MULTIPLE_DISPLAYS;ENABLE_IL2CPP;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_DUCK_TYPING;ENABLE_IOS_ON_DEMAND_RESOURCES;ENABLE_IOS_APP_SLICING;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Mono/lib/mono/2.0/mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Mono/lib/mono/2.0/System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Mono/lib/mono/2.0/System.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Mono/lib/mono/2.0/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Mono/lib/mono/2.0/Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityScript.Lang">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Mono/lib/mono/2.0/UnityScript.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Mono/lib/mono/2.0/System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Mono/lib/mono/2.0/System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TreeEditor">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Analytics">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.HoloLens">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HoloLens">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/UnityPurchasing/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VR">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>/Applications/Unity5.6.4P1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions">
+      <HintPath>/Applications/Unity5.6.4P1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.OSXStandalone.Extensions">
+      <HintPath>/Applications/Unity5.6.4P1/Unity5.6.4P1.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>/Applications/Unity5.6.4P1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>/Applications/Unity5.6.4P1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="flyVR.csproj">
+      <Project>{AEDD1E81-B141-5B02-8A1C-31205E65F546}</Project>
+      <Name>flyVR</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Wrld\Editor\ActiveBuildTargetChangedListener.cs" />
+    <Compile Include="Assets\Wrld\Editor\BuildSucceededListener.cs" />
+    <Compile Include="Assets\Wrld\Editor\CameraJumpEditor.cs" />
+    <Compile Include="Assets\Wrld\Editor\CopyPlatformResources.cs" />
+    <Compile Include="Assets\Wrld\Editor\ExitPlayModeOnScriptCompile.cs" />
+    <Compile Include="Assets\Wrld\Editor\FirstInstallActionsRunner.cs" />
+    <Compile Include="Assets\Wrld\Editor\PlatformHelpers.cs" />
+    <Compile Include="Assets\Wrld\Editor\WillPlayInEditorListener.cs" />
+    <Compile Include="Assets\Wrld\Editor\WrldStartupEditor.cs" />
+    <Compile Include="Assets\Wrld\Editor\XcodeProjectUpdater.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\StreamingAssets\WrldResources\FrankBold50_A8_icons.fnt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\fonts\IPA_font.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\fonts\OpenSans.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\ANGLE.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\ASIHttpRequest.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\http-parser.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\httpxx.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\libcares.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\libcrypto.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\libcurl.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\libjpeg-turbo.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\libktx.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\libpng.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\libssl.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\libuv.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\md5.cpp.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\mt19937ar.c.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\poly2tri.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\pthread.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\rapidjson.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\rapidxml.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\sqlite3.txt" />
+    <None Include="Assets\Wrld\3rd Party Licenses\libs\zlib.txt" />
+    <None Include="Assets\Wrld\AssetData\Windows\FrankBold50_A8_icons.fnt" />
+    <None Include="Assets\Wrld\AssetData\iOS\FrankBold50_A8_icons.fnt" />
+    <None Include="Assets\Wrld\Plugins\x86_64\StreamAlpha.bundle\Contents\Resources\FrankBold50_A8_icons.fnt" />
+    <None Include="Assets\Wrld\Shaders\Highlight.shader" />
+    <None Include="Assets\Wrld\Shaders\StandardWithVertexColor.shader" />
+    <None Include="Assets\Wrld\Shaders\StencilReflectionFloor.shader" />
+    <None Include="Assets\Wrld\Shaders\StencilWrite.shader" />
+    <None Include="Assets\Wrld\Shaders\StencilledGeometry.shader" />
+    <None Include="Assets\Wrld\Shaders\UnityVC.cginc" />
+    <None Include="Assets\Wrld\Shaders\UnityVCShadow.cginc" />
+    <None Include="Assets\Wrld\Version\ShadowConfig.txt" />
+    <None Include="Assets\Wrld\Version\WelcomeConfig.txt" />
+    <None Include="Assets\Wrld\Version\v0.7.1019.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
+</Project>
