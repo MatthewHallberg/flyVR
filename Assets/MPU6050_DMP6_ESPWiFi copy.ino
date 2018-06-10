@@ -1,25 +1,7 @@
 /* ============================================
 I2Cdev device library code is placed under the MIT license
 Copyright (c) 2012 Jeff Rowberg
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-===============================================
+==============================
 
   GY-521  NodeMCU
   MPU6050 devkit 1.0
@@ -37,6 +19,9 @@ THE SOFTWARE.
 // I2Cdev and MPU6050 must be installed as libraries, or else the .cpp/.h files
 // for both classes must be in the include path of your project
 #include "I2Cdev.h"
+
+#include <ESP8266WiFi.h>
+#include <WiFiUdp.h>
 
 #include "MPU6050_6Axis_MotionApps20.h"
 //#include "MPU6050.h" // not necessary if using MotionApps include file
@@ -143,10 +128,59 @@ void mpu_setup()
   }
 }
 
+//push buttons
+int greenButtonPin = 12;//6
+int redButtonPin = 13;//7
+int greenVal = 0; 
+int redVal = 0;
+bool greenDown = false;
+bool redDown = false;
+
+//wifi stuff
+const char* ssid     = "WillTradePasswordForBeer"; // wifi network name
+const char* password = "02civicsi"; // wifi network password
+IPAddress ipBroadCast(192,168,1,151); //iIP address of receiving computer or mobile device
+unsigned int udpRemotePort=1999;
+const int UDP_PACKET_SIZE = 28;
+char udpBuffer[ UDP_PACKET_SIZE];
+WiFiUDP udp;
+
 void setup(void)
 {
   Serial.begin(115200);
+  delay(10);
+  
+  // We start by connecting to a WiFi network
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      Serial.print(".");
+  }
+  Serial.println("WiFi connected"); 
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+  Serial.println("Starting UDP");
+  //send connected message
+  strcpy(udpBuffer, "Connected");
+  Serial.println("Connected"); 
+  udp.beginPacket(ipBroadCast, udpRemotePort);
+  udp.write(udpBuffer, sizeof(udpBuffer));
+  udp.endPacket();
+  
+  //set up buttons
+  pinMode(greenButtonPin, INPUT);
+  pinMode(redButtonPin, INPUT); 
+  //set up accelerometer 
   mpu_setup();
+}
+
+void sendMessage(String message){
+  strcpy(udpBuffer, "yo"); 
+  udp.beginPacket(ipBroadCast, udpRemotePort);
+  udp.write(udpBuffer, sizeof(udpBuffer));
+  udp.endPacket();
 }
 
 void mpu_loop()
@@ -188,22 +222,43 @@ void mpu_loop()
     mpu.dmpGetGravity(&gravity, &q);
     mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
 
-    float x = ypr[0] * 180/M_PI;
-    float y = ypr[1] * 180/M_PI;
-    float z = ypr[2] * 180/M_PI;
+    String x = String(ypr[0] * 180/M_PI);
+    String y = String(ypr[1] * 180/M_PI);
+    String z = String(ypr[2] * 180/M_PI);
     delay(100);
     mpu.resetFIFO();
-    Serial.print("x: ");
-    Serial.print(x);
-    Serial.print(" y: ");
-    Serial.print(y);
-    Serial.print(" z: ");
-    Serial.println(z);
+    String message = x + "," + y + "," + z;
+    Serial.println(message);
+    sendMessage(message);
 #endif
+  }
+}
+
+void buttonLoop(){
+  greenVal = digitalRead(greenButtonPin);
+  if (greenVal == HIGH && greenDown) {
+    greenDown = false;        
+    Serial.println("GREEN_UP");
+    sendMessage("GREEN_UP");  
+  } else if (greenVal == LOW && !greenDown) {
+    greenDown = true;        
+    Serial.println("GREEN_DOWN");
+    sendMessage("GREEN_DOWN");  
+  }
+  redVal = digitalRead(redButtonPin);
+  if (redVal == HIGH && redDown) {
+    redDown = false;        
+    Serial.println("RED_UP");
+    sendMessage("RED_UP");  
+  } else if (redVal == LOW && !redDown) {
+    redDown = true;        
+    Serial.println("RED_DOWN");
+    sendMessage("RED_DOWN");  
   }
 }
 
 void loop(void)
 {
   mpu_loop();
+  buttonLoop();
 }
