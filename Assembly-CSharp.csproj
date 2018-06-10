@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CamController.cs" />
+    <Compile Include="Assets\MessageController.cs" />
     <Compile Include="Assets\MouseLook.cs" />
     <Compile Include="Assets\Wrld\API\Api.cs" />
     <Compile Include="Assets\Wrld\API\WrldMap.cs" />

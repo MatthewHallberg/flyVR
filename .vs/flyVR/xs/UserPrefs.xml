@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{75F77A8B-DDFA-B013-6D9A-1DAD058F50A1}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Wrld/Scripts/Streaming/StreamingUpdater.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CamController.cs">
     <Files>
-      <File FileName="Assets/Wrld/API/WrldMap.cs" Line="32" Column="50" />
-      <File FileName="Assets/CamController.cs" Line="26" Column="72" />
-      <File FileName="Assets/Wrld/Scripts/Streaming/StreamingUpdater.cs" Line="29" Column="17" />
+      <File FileName="Assets/CamController.cs" Line="55" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
