@@ -139,7 +139,13 @@ bool redDown = false;
 //wifi stuff
 const char* ssid     = "WillTradePasswordForBeer"; // wifi network name
 const char* password = "02civicsi"; // wifi network password
-IPAddress ipBroadCast(192,168,1,151); //iIP address of receiving computer or mobile device
+//const char* ssid     = "VV6VG"; // wifi network name
+//const char* password = "33NG8DSNNY4ZKG4Z"; // wifi network password
+
+IPAddress deviceIpBroadCast(192,168,1,151); //iIP address of receiving computer or mobile device
+IPAddress fanIpBroadCast(192,168,1,179); 
+
+//IPAddress ipBroadCast(192,168,1,6);
 unsigned int udpRemotePort=1999;
 const int UDP_PACKET_SIZE = 28;
 char udpBuffer[ UDP_PACKET_SIZE];
@@ -165,7 +171,7 @@ void setup(void)
   //send connected message
   strcpy(udpBuffer, "Connected");
   Serial.println("Connected"); 
-  udp.beginPacket(ipBroadCast, udpRemotePort);
+  udp.beginPacket(deviceIpBroadCast, udpRemotePort);
   udp.write(udpBuffer, sizeof(udpBuffer));
   udp.endPacket();
   
@@ -176,9 +182,16 @@ void setup(void)
   mpu_setup();
 }
 
-void sendMessage(String message){
-  strcpy(udpBuffer, "yo"); 
-  udp.beginPacket(ipBroadCast, udpRemotePort);
+void sendVRMessage(String message){
+  strcpy(udpBuffer,message.c_str()); 
+  udp.beginPacket(deviceIpBroadCast, udpRemotePort);
+  udp.write(udpBuffer, sizeof(udpBuffer));
+  udp.endPacket();
+}
+
+void sendFanMessage(String message){
+  strcpy(udpBuffer,message.c_str()); 
+  udp.beginPacket(fanIpBroadCast, udpRemotePort);
   udp.write(udpBuffer, sizeof(udpBuffer));
   udp.endPacket();
 }
@@ -229,7 +242,7 @@ void mpu_loop()
     mpu.resetFIFO();
     String message = x + "," + y + "," + z;
     Serial.println(message);
-    sendMessage(message);
+    sendVRMessage(message);
 #endif
   }
 }
@@ -239,21 +252,23 @@ void buttonLoop(){
   if (greenVal == HIGH && greenDown) {
     greenDown = false;        
     Serial.println("GREEN_UP");
-    sendMessage("GREEN_UP");  
+    sendVRMessage("GREEN_UP");
+    sendFanMessage("FAN_LOW");  
   } else if (greenVal == LOW && !greenDown) {
     greenDown = true;        
     Serial.println("GREEN_DOWN");
-    sendMessage("GREEN_DOWN");  
+    sendVRMessage("GREEN_DOWN");
+    sendFanMessage("FAN_HIGH");  
   }
   redVal = digitalRead(redButtonPin);
   if (redVal == HIGH && redDown) {
     redDown = false;        
     Serial.println("RED_UP");
-    sendMessage("RED_UP");  
+    sendVRMessage("RED_UP");  
   } else if (redVal == LOW && !redDown) {
     redDown = true;        
     Serial.println("RED_DOWN");
-    sendMessage("RED_DOWN");  
+    sendVRMessage("RED_DOWN");  
   }
 }
 
