@@ -231,12 +231,14 @@
     <None Include="Assets\Wrld\Shaders\Highlight.shader" />
     <None Include="Assets\Wrld\3rd Party Licenses\libs\libktx.txt" />
     <None Include="Assets\Wrld\3rd Party Licenses\fonts\IPA_font.txt" />
+    <None Include="Assets\sor_lake1\readme.txt" />
     <None Include="Assets\Wrld\Version\WelcomeConfig.txt" />
     <None Include="Assets\Wrld\3rd Party Licenses\libs\mt19937ar.c.txt" />
     <None Include="Assets\Wrld\AssetData\Windows\FrankBold50_A8_icons.fnt" />
     <None Include="Assets\Wrld\3rd Party Licenses\libs\zlib.txt" />
     <None Include="Assets\Wrld\3rd Party Licenses\libs\pthread.txt" />
     <None Include="Assets\Wrld\3rd Party Licenses\libs\poly2tri.txt" />
+    <None Include="Assets\sor_lake1\sor_lake1.shader" />
     <None Include="Assets\Wrld\3rd Party Licenses\libs\ANGLE.txt" />
     <None Include="Assets\Wrld\Shaders\UnityVC.cginc" />
     <None Include="Assets\Wrld\3rd Party Licenses\libs\libuv.txt" />

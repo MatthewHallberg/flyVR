@@ -37,7 +37,7 @@ public class MessageController : MonoBehaviour {
 
 	void HandlePosition (string angle) {
 		string [] position = angle.Split (',');
-		camController.SetTurnAngle (position [2]);
+		camController.SetTurnAngle (position [2],position[0]);
 	}
 
 	void HandleButton (string status) {

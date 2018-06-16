@@ -15,8 +15,10 @@ public class CamController : MonoBehaviour {
 	private float lastYAngle = 0;
 	private float xAngle = 0;
 	private float zero = 0;
-	private List<float> zeroList = new List<float>();
+	private List<float> zeroList = new List<float> ();
+	private List<float> startYList = new List<float> ();
 	private float tareNum = 0;
+	private bool setStartAngle = false;
 
 	IEnumerator Start () {
 		Application.targetFrameRate = 60;
@@ -29,7 +31,14 @@ public class CamController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (shouldMove && !zero.Equals(0)) {
+
+		if (setStartAngle) {
+			setStartAngle = false;
+			transform.parent.eulerAngles = new Vector3 (0, startYList.Average (), 0);
+		}
+
+		if (shouldMove && !zero.Equals (0)) {
+
 			//make speed change with x angle
 			currSpeed = speed + ClampAngle (transform.eulerAngles.x);
 			transform.Translate (Vector3.forward * Time.deltaTime * currSpeed);
@@ -50,28 +59,21 @@ public class CamController : MonoBehaviour {
 			lastYAngle = yAngle;
 		}
 
-//#if UNITY_EDITOR
-//	if (Input.GetKey (KeyCode.UpArrow)){
-//		transform.eulerAngles += new Vector3 (-1, 0, 0);
-//	} else if (Input.GetKey (KeyCode.DownArrow)){
-//		transform.eulerAngles += new Vector3 (1, 0, 0);
-//	} else if (Input.GetKey (KeyCode.LeftArrow)) {
-//		transform.eulerAngles += new Vector3 (0, -1, 0);
-//	} else if (Input.GetKey (KeyCode.RightArrow)) {
-//		transform.eulerAngles += new Vector3 (0, 1, 0);
-//	}
-//#endif
-
+#if UNITY_EDITOR
+		transform.Translate (Vector3.forward * Time.deltaTime * 100);
+#endif
 	}
 
-	public void SetTurnAngle (string value) {
+	public void SetTurnAngle (string z,string y) {
 		if (tareNum < 20) {
 			tareNum++;
-			zeroList.Add (float.Parse (value));
+			zeroList.Add (float.Parse (z));
+			startYList.Add (float.Parse (y));
 		} else if (zero.Equals(0)) {
+			setStartAngle = true;
 			zero = zeroList.Average ();
 		} else {
-			yAngle = float.Parse (value);
+			yAngle = float.Parse (z);
 		}
 	}
 
