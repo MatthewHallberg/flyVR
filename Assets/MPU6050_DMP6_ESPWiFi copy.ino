@@ -142,10 +142,10 @@ const char* password = "02civicsi"; // wifi network password
 //const char* ssid     = "VV6VG"; // wifi network name
 //const char* password = "33NG8DSNNY4ZKG4Z"; // wifi network password
 
-IPAddress deviceIpBroadCast(192,168,1,151); //iIP address of receiving computer or mobile device
-IPAddress fanIpBroadCast(192,168,1,179); 
+//iIP address of receiving computer or mobile device, set to exact IP or al 255's to send to every device on the network
+IPAddress deviceIpBroadCast(255,255,255,255); 
+IPAddress fanIpBroadCast(255,255,255,255);
 
-//IPAddress ipBroadCast(192,168,1,6);
 unsigned int udpRemotePort=1999;
 const int UDP_PACKET_SIZE = 28;
 char udpBuffer[ UDP_PACKET_SIZE];
@@ -264,11 +264,13 @@ void buttonLoop(){
   if (redVal == HIGH && redDown) {
     redDown = false;        
     Serial.println("RED_UP");
-    sendVRMessage("RED_UP");  
+    sendVRMessage("RED_UP"); 
+    sendFanMessage("FAN_LOW");  
   } else if (redVal == LOW && !redDown) {
     redDown = true;        
     Serial.println("RED_DOWN");
-    sendVRMessage("RED_DOWN");  
+    sendVRMessage("RED_DOWN"); 
+    sendFanMessage("FAN_HIGH");   
   }
 }
 

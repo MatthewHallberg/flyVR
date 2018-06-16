@@ -18,8 +18,6 @@ char incomingPacket[255];
 void setup(void) {
   Serial.begin(115200);
   delay(10);
-
-
   
 // We start by connecting to a WiFi network
   Serial.print("Connecting to ");
@@ -35,12 +33,12 @@ void setup(void) {
   Serial.println("Starting UDP");
   Udp.begin(localUdpPort);  
 
-
-  
+//set pin modes
   pinMode(pin5, OUTPUT);//0
   pinMode(pin6, OUTPUT);//1
   pinMode(pin7, OUTPUT);//2
   delay(100);
+  //set default state
   low();
 }
 
